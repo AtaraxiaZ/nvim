@@ -1,5 +1,6 @@
 return {
   {
+    -- check :h vimtex-default-mapping for more keymap
     "lervag/vimtex",
     lazy = false, -- lazy-loading will disable inverse search
     config = function()
@@ -14,6 +15,10 @@ return {
       vim.g.vimtex_mappings_disable = { ["n"] = { "K" } } -- disable `K` as it conflicts with LSP hover
       vim.g.vimtex_quickfix_method = vim.fn.executable("pplatex") == 1 and "pplatex" or "latexlog"
       vim.g.vimtex_view_method = "zathura"
+      vim.g.vimtex_imaps_enabled = 1 -- check :VimtexImapsList, only valid in math mode
+      vim.g.vimtex_fold_enabled = 1
+      vim.g.vimtex_quickfix_open_on_warning = 0 -- Don't open QuickFix for warning messages if no errors are present
+      vim.g.vimtex_quickfix_ignore_filters = { "Underfull", "Overfull" } -- Filter out some compilation warning messages from QuickFix display
     end,
   },
   {
@@ -27,7 +32,7 @@ return {
     "iamcco/markdown-preview.nvim",
     config = function()
       vim.g.mkdp_refresh_slow = 1
-      vim.g.mkdp_open_to_the_world = 0
+      vim.g.mkdp_open_to_the_world = 1
       vim.g.mkdp_open_ip = "127.0.0.1"
       vim.g.mkdp_echo_preview_url = 1
       vim.g.mkdp_port = "7777"

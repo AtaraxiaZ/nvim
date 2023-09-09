@@ -6,20 +6,21 @@ return {
   -- first: disable default <tab> and <s-tab> behavior in LuaSnip
   {
     "L3MON4D3/LuaSnip",
-    require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets" }), -- must use absolute path
     keys = function()
       return {}
     end,
     config = function()
       require("luasnip").setup({
         history = true,
-        store_selection_keys = "<tab>",
+        store_selection_keys = "<tab>", -- key to triggger visual selection
+        -- default update_events is "InsertLeave", only updated repeated nodes after leaving insert mode
         update_events = "TextChanged,TextChangedI",
         region_check_events = "InsertEnter",
         delete_check_events = "TextChanged",
         enable_autosnippets = true,
       })
     end,
+    require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets" }), -- must use absolute path
   },
   -- then: setup supertab in cmp
   {
