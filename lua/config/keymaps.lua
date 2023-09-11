@@ -33,13 +33,16 @@ keymap({ "n", "x" }, "cv", '"+p')
 -- modify x to delete text without changing the internal registers.
 keymap({ "n", "x" }, "x", '"_x')
 -- select all text in current buffer
-keymap("n", "<leader>a", ":keepjumps normal! ggVG<cr>")
+keymap("n", "<leader>a", ":keepjumps normal! ggVG<cr>", { desc = "Select all" })
 
 -- delete all the trailing whitespace
 -- keymap('n', '<leader>cc', ':keepjumps %s/\\s\\+$//e<CR>', {desc = 'del trailing space'})
 -- keymap('n', '<leader>cc', "! sed -i e :a -e '/./,$!d;/^\n*$/{$d;N;};/\n$/ba' file", {desc = 'del trailing space'})
-keymap("n", "<leader>cc", "! sed -i 's/[ \t]*$//' %<CR>", { desc = "del trailing space" })
+keymap("n", "<leader>cc", "! sed -i '' 's/[ \t]*$//' %<CR>", { desc = "del trailing space" })
 
 -- An recursive keybinding example, but avoid using this, may cause conflicts
 -- keymap('n', '<F2>', '<cmd>Lexplore<cr>')
 -- keymap('n', '<space><space>', '<F2>', {remap = true})
+
+keymap("n", "<leader>bf", ":bfirst<cr>", { desc = "go to first buffer" })
+keymap("n", "<leader>bl", ":blast<cr>", { desc = "go to last buffer" })
