@@ -31,3 +31,11 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   desc = "Generate tags when saving",
   command = "silent !ctags --tag-relative=never -R ./*",
 })
+
+-- Disable autoformat for lua files
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "systemverilog" },
+  callback = function()
+    vim.b.autoformat = false
+  end,
+})

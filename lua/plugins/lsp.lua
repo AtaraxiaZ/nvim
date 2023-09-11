@@ -7,9 +7,11 @@ return {
         "stylua",
         "shellcheck",
         "shfmt",
-        "flake8",
-        "pyright",
+        "pyright", -- For static type check
         "verible",
+        "marksman",
+        "black", -- For python formatter
+        "debugpy",
       },
     },
   },
@@ -36,13 +38,15 @@ return {
         },
         texlab = {
           keys = {
-            { "<Leader>K", "<plug>(vimtex-doc-package)", desc = "Vimtex Docs", silent = true },
+            { "<Leader>K", "<cmd>VimtexDocPackage<cr>", desc = "Vimtex Docs", silent = true },
           },
         },
+        clangd = function(_, opts)
+          opts.capabilities.offsetEncoding = { "utf-16" }
+        end,
       },
     },
   },
-
   {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
