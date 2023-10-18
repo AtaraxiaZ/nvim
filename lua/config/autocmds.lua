@@ -25,17 +25,18 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
-vim.api.nvim_create_autocmd("BufWritePost", {
-  pattern = { "*.v", "*.sv", "*.svh", "*.py" },
-  group = augroup,
-  desc = "Generate tags when saving",
-  command = "silent !ctags --tag-relative=never -R ./*",
-})
-
 -- Disable autoformat for lua files
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "systemverilog" },
   callback = function()
     vim.b.autoformat = false
+    vim.diagnostic.disable() -- prevent all annoying svls messages
   end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = { "*.v", "*.sv", "*.svh", "*.py" },
+  group = augroup,
+  desc = "Generate tags when saving",
+  command = "silent !ctags --tag-relative=never -R ./*",
 })

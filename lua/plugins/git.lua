@@ -12,4 +12,17 @@ return {
       { "<leader>gdr", ":DiffviewRefresh<cr>", desc = "Diffview Refresh" },
     },
   },
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim", -- required
+      "nvim-telescope/telescope.nvim", -- optional
+      "sindrets/diffview.nvim", -- optional
+      "ibhagwan/fzf-lua", -- optional
+    },
+    config = true,
+    keys = {
+      { "<leader>gn", "<cmd>Neogit kind=vsplit<cr>", desc = "Neogit" },
+    },
+  },
 }

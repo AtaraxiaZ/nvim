@@ -41,6 +41,8 @@ return {
             { "<Leader>K", "<cmd>VimtexDocPackage<cr>", desc = "Vimtex Docs", silent = true },
           },
         },
+      },
+      setup = {
         clangd = function(_, opts)
           opts.capabilities.offsetEncoding = { "utf-16" }
         end,

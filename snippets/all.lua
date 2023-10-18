@@ -1,4 +1,4 @@
 -- add snippets like followed
--- return {
---   s("trig", t("loaded!!")),
--- }
+return {
+  s("trig", t("loaded!!")),
+}
