@@ -10,7 +10,7 @@ vim.opt.path:append("/home/zhe/Nutstore\\ Files/Typora/**")
 
 local options = {
   -- :h option-list to check more options
-  suffixesadd = { ".sv", ".py", ".c", ".cpp" },
+  suffixesadd = { ".v", ".sv", ".py", ".c", ".cpp" },
   backup = false, -- creates a backup file
   winbar = "%=%m %f", -- It will put filename on top of the window
   clipboard = "unnamedplus", -- allows neovim to access the system clipboard
