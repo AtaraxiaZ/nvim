@@ -10,13 +10,6 @@
 -- More about autocommands :help autocmd-intro
 local augroup = vim.api.nvim_create_augroup("user_cmds", { clear = true })
 
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "help", "man" },
-  group = augroup,
-  desc = "Use q to close the window",
-  command = "nnoremap <buffer> q <cmd>quit<cr>",
-})
-
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = augroup,
   desc = "Highlight on yank",
@@ -26,7 +19,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.api.nvim_create_autocmd("BufWritePost", {
-  pattern = { "*.v", "*.sv", "*.svh", "*.py" },
+  pattern = { "*.v", "*.sv", "*.svh", "*.py", "*.c", "*.h" },
   group = augroup,
   desc = "Generate tags when saving",
   command = "silent !ctags --tag-relative=never -R ./*",

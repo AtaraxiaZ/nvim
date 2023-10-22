@@ -14,6 +14,7 @@ return {
         "debugpy",
         "clangd",
         "texlab",
+        "codelldb",
       },
     },
   },
@@ -62,5 +63,13 @@ return {
         },
       })
     end,
+  },
+  {
+    "p00f/clangd_extensions.nvim",
+    opts = {
+      inlay_hints = {
+        inline = true,
+      },
+    },
   },
 }

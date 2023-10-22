@@ -14,7 +14,10 @@ return {
   {
     "keaising/im-select.nvim",
     config = function()
-      require("im_select").setup({})
+      require("im_select").setup({
+        default_im_select = "1",
+        default_command = "fcitx-remote",
+      })
     end,
   },
 }

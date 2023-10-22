@@ -53,12 +53,22 @@ return {
     "nvim-telescope/telescope.nvim",
     keys = {
       {
-        "<leader>fp",
+        "<leader>fP",
         function()
           require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root })
         end,
         desc = "Find Plugin File",
       },
+    },
+  },
+  {
+    "nvim-telescope/telescope-project.nvim",
+    dependencies = { "nvim-telescope/telescope-file-browser.nvim" },
+    config = function()
+      require("telescope").load_extension("project")
+    end,
+    keys = {
+      { "<leader>fp", "<cmd>lua require'telescope'.extensions.project.project{}<cr>", desc = "Find Project Files" },
     },
   },
 }

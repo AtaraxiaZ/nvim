@@ -5,8 +5,9 @@
 -- add your path here, you need to use ** for recursive search, not *
 -- And you can't use ~ here, you must expand it, or use
 -- (vim.env.HOME .. "/projects/some-project/**")
-vim.opt.path:append("/home/zhe/Documents/projects/**")
-vim.opt.path:append("/home/zhe/Nutstore\\ Files/Typora/**")
+-- vim.opt.path:append("/home/zhe/Documents/projects/**")
+-- vim.opt.path:append("/home/zhe/Nutstore\\ Files/Typora/**")
+vim.opt.path:append("/lib/modules/5.15.0-84-generic/**")
 
 local options = {
   -- :h option-list to check more options
