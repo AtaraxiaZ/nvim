@@ -1,6 +1,7 @@
 -- Write all your systemverilog file specific command here
 local opts = { noremap = true, silent = true }
 local keymap = vim.keymap.set
+local opt = vim.opt
 
 -- Jump between register q and d
 keymap("n", "<leader>rq", "/<C-R>/<BS><BS><BS>q<CR>", { desc = "jump to reg_q" })
@@ -13,5 +14,7 @@ keymap("n", "<leader>ro", ":%s/<C-R>//\\0_o/ge<CR>", { desc = "add _o" })
 keymap(
   "n",
   "<F5>",
-  "! python ~/anaconda3/pkgs/cogapp*/bin/cog.py -r %<CR> ! emacs -l /fpga/scripts/verilog-mode/.emacs --batch % -f verilog-batch-auto<CR> ! sed -i 's/[ \t]*$//' %<CR>"
+  "! python ~/anaconda3/pkgs/cogapp*/bin/cog.py -r % <CR> ! emacs -l ~/bin/verilog-mode.el --batch % -f verilog-batch-auto <CR> ! sed -i '' 's/[ \t]*$//g' % <CR> <cmd>e! | retab | update <cr>"
 )
+
+opt.commentstring = "// %s"

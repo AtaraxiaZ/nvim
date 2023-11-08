@@ -40,8 +40,8 @@ return {
           hide_gitignored = true,
           hide_by_name = {
             "tags",
-            -- '.git',
-            -- '.DS_Store',
+            ".git",
+            ".DS_Store",
             -- 'thumbs.db',
           },
           never_show = {},

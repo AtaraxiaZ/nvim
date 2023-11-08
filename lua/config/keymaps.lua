@@ -44,5 +44,5 @@ keymap("n", "<leader>cc", "! sed -i 's/[ \t]*$//' %<CR>", { desc = "del trailing
 -- keymap('n', '<F2>', '<cmd>Lexplore<cr>')
 -- keymap('n', '<space><space>', '<F2>', {remap = true})
 
-keymap("n", "<leader>bf", ":bfirst<cr>", { desc = "go to first buffer" })
-keymap("n", "<leader>bl", ":blast<cr>", { desc = "go to last buffer" })
+keymap("n", "<leader>b1", ":bfirst<cr>", { desc = "go to first buffer" })
+keymap("n", "<leader>b0", ":blast<cr>", { desc = "go to last buffer" })

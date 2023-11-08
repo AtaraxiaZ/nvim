@@ -11,7 +11,7 @@ vim.opt.path:append("/lib/modules/5.15.0-84-generic/**")
 
 local options = {
   -- :h option-list to check more options
-  suffixesadd = { ".sv", ".py", ".c", ".cpp" },
+  suffixesadd = { ".v", ".sv", ".py", ".c", ".cpp" },
   backup = false, -- creates a backup file
   winbar = "%=%m %f", -- It will put filename on top of the window
   clipboard = "unnamedplus", -- allows neovim to access the system clipboard
@@ -55,6 +55,7 @@ local options = {
   scrolloff = 8, -- is one of my fav
   sidescrolloff = 8,
   guifont = "monospace:h17", -- the font used in graphical neovim applications
+  tags = "./tags,tags;/",
 }
 
 vim.opt.shortmess:append("c")
@@ -69,7 +70,7 @@ end
 --   colorscheme rubber
 -- ]]
 vim.cmd("set whichwrap+=<,>,[,],h,l")
-vim.cmd([[set iskeyword+=-]])
+-- vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
 
 vim.opt.complete:remove({ "]" })
