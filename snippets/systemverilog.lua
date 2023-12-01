@@ -88,15 +88,15 @@ return {
   ),
 
   s(
-    { trig = "copyright", dscr = "The copyright of Bytedance" },
+    { trig = "copyright", dscr = "The copyright" },
     fmta(
       [[
         //******************************************************************************
-        // Copyright <> Bytedance Inc. or its affiliates. All Rights Reserved.
+        // Copyright <> Microwave System Lab @ Southeast University. All Rights Reserved.
         //
         // File: <>
         // Authors:
-        // ZheLi, zheli@bytedance.com
+        // Zhe Li, 904016301@qq.com
         //
         // Description:
         // input:

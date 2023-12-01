@@ -18,12 +18,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
--- Disable autoformat for lua files
+-- Disable autoformat for certain filetypes
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "systemverilog" },
+  pattern = { "c", "cpp", "systemverilog", "bib" },
   callback = function()
     vim.b.autoformat = false
-    vim.diagnostic.disable() -- prevent all annoying svls messages
   end,
 })
 
@@ -32,4 +31,12 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   group = augroup,
   desc = "Generate tags when saving",
   command = "silent !ctags --tag-relative=never -R ./*",
+})
+
+-- Disable diagnostic for certain filetypes
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "systemverilog" },
+  callback = function()
+    vim.diagnostic.disable() -- prevent all annoying svls messages
+  end,
 })

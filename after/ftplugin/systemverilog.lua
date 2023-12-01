@@ -9,6 +9,8 @@ keymap("n", "<leader>rd", "/<C-R>/<BS><BS><BS>d<CR>", { desc = "jump to reg_d" }
 -- add _i and _o to all signal
 keymap("n", "<leader>ri", ":%s/<C-R>//\\0_i/ge<CR>", { desc = "add _i" })
 keymap("n", "<leader>ro", ":%s/<C-R>//\\0_o/ge<CR>", { desc = "add _o" })
+-- change all wire and reg to logic
+keymap("n", "<leader>rr", "<cmd>%s/\\<wire\\>/logic/g<CR> | <cmd>%s/\\<reg\\>/logic/g<CR>", { desc = "v to sv" })
 
 -- run cog and verilog mode
 keymap(
