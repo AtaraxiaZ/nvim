@@ -53,6 +53,22 @@ return {
       { i(1), rep(1) }
     )
   ),
+  s(
+    {
+      trig = "ifdef",
+      dscr = "The conditional compilation control",
+    },
+    fmta(
+      [[
+            `ifdef <>
+                
+            `else
+
+            `endif
+            ]],
+      { i(1) }
+    )
+  ),
 
   s(
     { trig = "logic", dscr = "The defination of _d and _q signal" },
@@ -121,6 +137,18 @@ return {
             input  logic                rst_i,
             ]],
       {}
+    )
+  ),
+  s(
+    {
+      trig = "define",
+      dscr = "Define a macro",
+    },
+    fmta(
+      [[
+            `define <>
+            ]],
+      { i(1) }
     )
   ),
 }

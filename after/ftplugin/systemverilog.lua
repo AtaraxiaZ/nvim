@@ -7,16 +7,16 @@ local opt = vim.opt
 keymap("n", "<leader>rq", "/<C-R>/<BS><BS><BS>q<CR>", { desc = "jump to reg_q" })
 keymap("n", "<leader>rd", "/<C-R>/<BS><BS><BS>d<CR>", { desc = "jump to reg_d" })
 -- add _i and _o to all signal
-keymap("n", "<leader>ri", ":%s/<C-R>//\\0_i/ge<CR>", { desc = "add _i" })
-keymap("n", "<leader>ro", ":%s/<C-R>//\\0_o/ge<CR>", { desc = "add _o" })
+keymap("n", "<leader>ri", "* :%s/<C-R>//\\0_i/ge<CR> | <c-o>", { desc = "add _i" })
+keymap("n", "<leader>ro", "* :%s/<C-R>//\\0_o/ge<CR> | <c-o>", { desc = "add _o" })
 -- change all wire and reg to logic
-keymap("n", "<leader>rr", "<cmd>%s/\\<wire\\>/logic/g<CR> | <cmd>%s/\\<reg\\>/logic/g<CR>", { desc = "v to sv" })
+keymap("n", "<leader>rr", "<cmd>%s/\\<wire\\>/logic/ge<CR> | <cmd>%s/\\<reg\\>/logic/ge<CR>", { desc = "v to sv" })
 
 -- run cog and verilog mode
 keymap(
   "n",
   "<F5>",
-  "! python ~/anaconda3/pkgs/cogapp*/bin/cog.py -r % <CR> ! emacs -l ~/bin/verilog-mode.el --batch % -f verilog-batch-auto <CR> ! sed -i '' 's/[ \t]*$//g' % <CR> <cmd>e! | retab | update <cr>"
+  "! python ~/anaconda3/pkgs/cogapp*/bin/cog.py -r % <CR> ! emacs -l ~/bin/verilog-mode.el --batch % -f verilog-batch-auto <CR> ! sed -i 's/[ \t]*$//g' % <CR> <cmd>e! | retab | update <cr>"
 )
 
 opt.commentstring = "// %s"

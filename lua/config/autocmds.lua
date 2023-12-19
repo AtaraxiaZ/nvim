@@ -20,7 +20,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- Disable autoformat for certain filetypes
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "c", "cpp", "systemverilog", "bib" },
+  pattern = { "c", "cpp", "verilog", "systemverilog", "bib" },
   callback = function()
     vim.b.autoformat = false
   end,
@@ -39,4 +39,11 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   callback = function()
     vim.diagnostic.disable() -- prevent all annoying svls messages
   end,
+})
+
+vim.api.nvim_create_autocmd("BufRead", {
+  pattern = { "*.v" },
+  group = augroup,
+  desc = "Set filetype to verilog",
+  command = "set filetype=verilog",
 })
