@@ -4,7 +4,7 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "stylua",
+        "stylua", -- To read stylua.toml
         "shellcheck",
         "shfmt",
         "pyright", -- For static type check

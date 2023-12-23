@@ -27,7 +27,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 vim.api.nvim_create_autocmd("BufWritePost", {
-  pattern = { "*.v", "*.sv", "*.svh", "*.py", "*.c", "*.h" },
+  pattern = { "*.v", "*.sv", "*.svh", "*.py", "*.c", "*.h", "*.scala", "*.cpp", "*.cc" },
   group = augroup,
   desc = "Generate tags when saving",
   command = "silent !ctags --tag-relative=never -R ./*",
