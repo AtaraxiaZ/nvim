@@ -5,6 +5,7 @@ if vim.g.vscode then
     [[nnoremap <silent> <s-h> <cmd>lua require('vscode-neovim').call('workbench.action.previousEditorInGroup')<cr>]]
   )
   vim.cmd([[nnoremap <silent> <s-l> <cmd>lua require('vscode-neovim').call('workbench.action.nextEditorInGroup')<cr>]])
+  vim.cmd([[nnoremap <silent> <esc> <cmd>noh<cr><esc>]])
 else
   -- It may make a mass in vscode
   require("config.lazy")
