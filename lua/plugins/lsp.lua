@@ -15,6 +15,8 @@ return {
         "clangd",
         "texlab",
         "codelldb",
+        "checkmake",
+        "hadolint",
       },
     },
   },

@@ -71,4 +71,8 @@ return {
       { "<leader>fp", "<cmd>lua require'telescope'.extensions.project.project{}<cr>", desc = "Find Project Files" },
     },
   },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    tag = "v3.4.1", --The latest v3.5 have bugs
+  },
 }
