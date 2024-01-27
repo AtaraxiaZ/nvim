@@ -17,5 +17,6 @@ if vim.g.vscode then
   vim.cmd([[autocmd InsertLeave * :silent !D:\\64bit\im-select.exe 1033]])
 else
   -- It may make a mass in vscode
+  require("pre.autocmds")
   require("config.lazy")
 end

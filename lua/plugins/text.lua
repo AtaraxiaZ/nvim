@@ -29,6 +29,8 @@ return {
     end,
   },
   {
+    -- You need to go to the directory of the project and run `npm install` to install the dependencies
+    -- cd ~/.local/share/nvim/lazy/markdown-preview.nvim && npm install
     "iamcco/markdown-preview.nvim",
     config = function()
       vim.g.mkdp_refresh_slow = 1
