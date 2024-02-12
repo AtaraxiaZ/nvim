@@ -47,3 +47,11 @@ vim.api.nvim_create_autocmd("BufRead", {
   desc = "Set filetype to verilog",
   command = "set filetype=verilog",
 })
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "c" },
+  callback = function()
+    -- If you want to use math.h lib, use :make -lm
+    vim.opt_local.makeprg = "gcc -Wall -Wextra -Werror -std=c99 -pedantic -g % -o %<"
+  end,
+})

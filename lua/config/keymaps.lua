@@ -24,9 +24,6 @@ keymap("i", "jk", "<ESC>", opts)
 -- Do not yank when paste
 keymap("v", "p", '"_dp', opts)
 
--- You probably also want to set a keymap to toggle aerial
-keymap("n", "<leader>O", "<cmd>AerialToggle!<CR>")
-
 -- copy and paste from system clipboard
 keymap({ "n", "x" }, "cp", '"+y')
 keymap({ "n", "x" }, "cv", '"+p')
