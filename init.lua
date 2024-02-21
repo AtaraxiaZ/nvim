@@ -12,9 +12,7 @@ if vim.g.vscode then
 
   -- Options
   vim.opt.ignorecase = true
-
-  -- Auto command
-  vim.cmd([[autocmd InsertLeave * :silent !D:\\64bit\im-select.exe 1033]])
+  require("plugins.im-select")
 else
   -- It may make a mass in vscode
   require("pre.autocmds")
