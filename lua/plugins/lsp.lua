@@ -102,6 +102,7 @@ return {
         vim.api.nvim_create_autocmd("FileType", {
           pattern = { "scala", "sbt" },
           callback = function()
+            vim.opt.shortmess:remove("F")
             require("metals").initialize_or_attach(metals_config)
           end,
           group = nvim_metals_group,

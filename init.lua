@@ -12,7 +12,7 @@ if vim.g.vscode then
 
   -- Options
   vim.opt.ignorecase = true
-  require("plugins.im-select")
+  require("vscode.im-select")
 else
   -- It may make a mass in vscode
   require("pre.autocmds")
