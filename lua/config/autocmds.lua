@@ -37,7 +37,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "systemverilog" },
   callback = function()
-    vim.diagnostic.disable() -- prevent all annoying svls messages
+    -- vim.diagnostic.disable() -- prevent all annoying svls messages
   end,
 })
 
