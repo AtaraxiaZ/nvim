@@ -33,9 +33,7 @@ keymap({ "n", "x" }, "x", '"_x')
 keymap("n", "<leader>a", ":keepjumps normal! ggVG<cr>", { desc = "Select all" })
 
 -- delete all the trailing whitespace
--- keymap('n', '<leader>cc', ':keepjumps %s/\\s\\+$//e<CR>', {desc = 'del trailing space'})
--- keymap('n', '<leader>cc', "! sed -i e :a -e '/./,$!d;/^\n*$/{$d;N;};/\n$/ba' file", {desc = 'del trailing space'})
-keymap("n", "<leader>cc", "<cmd> retab | ! sed -i 's/[ \t]*$//' %<CR>", { desc = "del trailing space" })
+keymap("n", "<CR>", "<cmd> retab | silent ! sed -i 's/[ \t]*$//' %<CR>", { desc = "Retab and del trailing space" })
 
 -- An recursive keybinding example, but avoid using this, may cause conflicts
 -- keymap('n', '<F2>', '<cmd>Lexplore<cr>')

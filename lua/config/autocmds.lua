@@ -20,7 +20,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- Disable autoformat for certain filetypes
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "c", "cpp", "verilog", "systemverilog", "bib" },
+  pattern = { "verilog", "systemverilog", "bib" },
   callback = function()
     vim.b.autoformat = false
   end,
@@ -53,5 +53,19 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   callback = function()
     -- If you want to use math.h lib, use :make -lm
     vim.opt_local.makeprg = "gcc -Wall -Wextra -Werror -std=c99 -pedantic -g % -o %<"
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "cpp" },
+  callback = function()
+    vim.opt_local.makeprg = "g++ -Wall -Wextra -Werror -std=c++17 -pedantic -g % -o %<"
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "markdown", "tex" },
+  callback = function()
+    vim.opt_local.textwidth = 80
   end,
 })
