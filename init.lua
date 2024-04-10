@@ -12,6 +12,7 @@ if vim.g.vscode then
 
   -- Options
   vim.opt.ignorecase = true
+  vim.opt.clipboard:append("unnamedplus")
   require("vscode.im-select")
 else
   -- It may make a mass in vscode
