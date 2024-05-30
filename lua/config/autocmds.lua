@@ -26,12 +26,13 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd("BufWritePost", {
-  pattern = { "*.v", "*.sv", "*.svh", "*.py", "*.c", "*.h", "*.scala", "*.cpp", "*.cc" },
-  group = augroup,
-  desc = "Generate tags when saving",
-  command = "silent !ctags --tag-relative=never -R ./*",
-})
+-- I start to use LSP nearly anywhere, so tags Generate is not necessary
+-- vim.api.nvim_create_autocmd("BufWritePost", {
+--   pattern = { "*.v", "*.sv", "*.svh", "*.py", "*.c", "*.h", "*.cpp", "*.cc" },
+--   group = augroup,
+--   desc = "Generate tags when saving",
+--   command = "silent !ctags --tag-relative=never -R ./*",
+-- })
 
 -- Disable diagnostic for certain filetypes
 vim.api.nvim_create_autocmd({ "FileType" }, {

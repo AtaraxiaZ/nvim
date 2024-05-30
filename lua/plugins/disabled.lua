@@ -1,3 +1,3 @@
 return {
-  -- { "folke/trouble.nvim", enabled = false },
+  { "nvim-orgmode/orgmode", enabled = false },
 }
