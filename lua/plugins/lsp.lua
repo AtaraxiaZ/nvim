@@ -52,9 +52,9 @@ return {
           opts.capabilities.offsetEncoding = { "utf-16" }
         end,
       },
-      codelens = {
-        enabled = true,
-      },
+      -- codelens = {
+      --   enabled = true,
+      -- },
     },
   },
   {

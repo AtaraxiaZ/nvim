@@ -106,16 +106,12 @@ return {
     opts = {
       workspaces = {
         {
-          name = "personal",
-          path = "~/vaults/personal",
-        },
-        {
           name = "FPGA",
-          path = "~/vaults/work/FPGA",
+          path = "~/vaults/FPGA",
         },
         {
           name = "CS",
-          path = "~/vaults/work/CS",
+          path = "~/vaults/CS",
         },
       },
 

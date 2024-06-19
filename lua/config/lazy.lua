@@ -19,6 +19,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.scala" },
     { import = "lazyvim.plugins.extras.dap.core" },
     { import = "lazyvim.plugins.extras.coding.copilot" },
+    { import = "lazyvim.plugins.extras.coding.luasnip" },
     { import = "lazyvim.plugins.extras.formatting.black" },
     -- import/override with your plugins
     { import = "plugins" },

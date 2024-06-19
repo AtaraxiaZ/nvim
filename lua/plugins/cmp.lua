@@ -20,7 +20,7 @@ return {
         enable_autosnippets = true,
       })
     end,
-    require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets" }), -- must use absolute path
+    require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/snippets" }), -- must use absolute path
   },
   -- then: setup supertab in cmp
   {
