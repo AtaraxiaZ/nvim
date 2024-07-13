@@ -15,7 +15,7 @@ local options = {
   backup = false, -- creates a backup file
   winbar = "%=%m %f", -- It will put filename on top of the window
   clipboard = "unnamedplus", -- allows neovim to access the system clipboard
-  spell = true, -- enable spell check
+  spell = false, -- enable spell check
   cmdheight = 2, -- more space in the neovim command line for displaying messages
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
   conceallevel = 1, -- to make obsidian.nvim function properly

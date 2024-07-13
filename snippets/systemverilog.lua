@@ -34,7 +34,7 @@ return {
       // indent-tabs-mode: nil
       // tab-width: 4
       // verilog-typedef-regexp:"_t$"
-      // verilog-library-directories:("." "../tb/")
+      // verilog-library-directories:("." "../../../bytefpga_ip_common/src/*/")
       // verilog-auto-inst-column:30
       // End:
      ]],

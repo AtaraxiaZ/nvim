@@ -11,12 +11,10 @@ keymap("n", "<leader>ri", "* :%s/<C-R>//\\0_i/ge<CR> | <c-o>", { desc = "add _i"
 keymap("n", "<leader>ro", "* :%s/<C-R>//\\0_o/ge<CR> | <c-o>", { desc = "add _o" })
 -- change all wire and reg to logic
 keymap("n", "<leader>rr", "<cmd>%s/\\<wire\\>/logic/ge<CR> | <cmd>%s/\\<reg\\>/logic/ge<CR>", { desc = "v to sv" })
+-- delete all space before trailing semicolon/comma
+keymap("n", "<leader>rt", "<cmd>%s/\\s*;$/;/g<CR> | <cmd>%s/\\s*,$/,/g<CR>", { desc = "delete space before ;," })
 
 -- run cog and verilog mode
-keymap(
-  "n",
-  "<F5>",
-  "! python ~/anaconda3/pkgs/cogapp*/bin/cog.py -r % <CR> ! emacs -l ~/bin/verilog-mode.el --batch % -f verilog-batch-auto <CR> ! sed -i 's/[ \t]*$//g' % <CR> <cmd>e! | retab | update <cr>"
-)
+keymap("n", "<F5>", "! emacs -l ~/bin/verilog-mode.el --batch % -f verilog-batch-auto <CR>")
 
 opt.commentstring = "// %s"
