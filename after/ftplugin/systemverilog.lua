@@ -10,7 +10,12 @@ keymap("n", "<leader>rd", "/<C-R>/<BS><BS><BS>d<CR>", { desc = "jump to reg_d" }
 keymap("n", "<leader>ri", "* :%s/<C-R>//\\0_i/ge<CR> | <c-o>", { desc = "add _i" })
 keymap("n", "<leader>ro", "* :%s/<C-R>//\\0_o/ge<CR> | <c-o>", { desc = "add _o" })
 -- change all wire and reg to logic
-keymap("n", "<leader>rr", "<cmd>%s/\\<wire\\>/logic/ge<CR> | <cmd>%s/\\<reg\\>/logic/ge<CR>", { desc = "v to sv" })
+keymap(
+  "n",
+  "<leader>rr",
+  "<cmd>%s/\\<wire\\>/logic/ge<CR> | <cmd>%s/\\<reg\\>/logic/ge<CR> | <cmd>%s/always\\s*@(\\s*\\*\\s*)/always_comb/ge<CR> | <cmd>%s/always\\s*@(\\s*posedge/always_ff @(posedge/ge<CR>",
+  { desc = "v to sv" }
+)
 -- delete all space before trailing semicolon/comma
 keymap("n", "<leader>rt", "<cmd>%s/\\s*;$/;/g<CR> | <cmd>%s/\\s*,$/,/g<CR>", { desc = "delete space before ;," })
 
