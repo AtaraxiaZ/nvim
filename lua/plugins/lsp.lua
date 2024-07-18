@@ -78,36 +78,24 @@ return {
     },
   },
   {
-    {
-      "scalameta/nvim-metals",
-      keys = {
-        {
-          "<leader>cW",
-          function()
-            require("metals").hover_worksheet()
-          end,
-          desc = "Metals Worksheet",
-          ft = { "scala", "sbt" },
-        },
-        {
-          "<leader>cM",
-          function()
-            require("telescope").extensions.metals.commands()
-          end,
-          desc = "Telescope Metals Commands",
-          ft = { "scala", "sbt" },
-        },
+    "scalameta/nvim-metals",
+    keys = {
+      {
+        "<leader>cW",
+        function()
+          require("metals").hover_worksheet()
+        end,
+        desc = "Metals Worksheet",
+        ft = { "scala", "sbt" },
+      },
+      {
+        "<leader>cM",
+        function()
+          require("telescope").extensions.metals.commands()
+        end,
+        desc = "Telescope Metals Commands",
+        ft = { "scala", "sbt" },
       },
     },
-  },
-  {
-
-    "git@code.byted.org:chenjiaqi.cposture/codeverse.vim.git",
-    dependencies = {
-      "hrsh7th/nvim-cmp",
-    },
-    config = function()
-      require("codeverse").setup({})
-    end,
   },
 }

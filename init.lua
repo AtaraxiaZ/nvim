@@ -19,3 +19,7 @@ else
   require("pre.autocmds")
   require("config.lazy")
 end
+
+if vim.fn.has("macunix") then
+  require("bytedance.lsp")
+end
