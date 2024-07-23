@@ -20,6 +20,6 @@ keymap(
 keymap("n", "<leader>rt", "<cmd>%s/\\s*;$/;/g<CR> | <cmd>%s/\\s*,$/,/g<CR>", { desc = "delete space before ;," })
 
 -- run cog and verilog mode
-keymap("n", "<F5>", "! emacs -l ~/bin/verilog-mode.el --batch % -f verilog-batch-auto <CR>")
+keymap("n", "<F5>", "! emacs -l ~/opt/verilog-mode.el --batch % -f verilog-batch-auto <CR>")
 
 opt.commentstring = "// %s"

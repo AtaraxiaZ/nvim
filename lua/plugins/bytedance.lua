@@ -1,3 +1,8 @@
+local isEnabled = vim.fn.has("macunix")
+if not isEnabled then
+  return {}
+end
+
 return {
   {
     "git@code.byted.org:chenjiaqi.cposture/codeverse.vim.git",
