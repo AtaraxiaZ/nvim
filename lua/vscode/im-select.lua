@@ -1,6 +1,6 @@
 local C = {
   -- im-select binary's name, or the binary's full path
-  default_command = "D:\\64bit\\im-select.exe",
+  default_command = "im-select",
   -- default input method in normal mode.
   default_method_selected = "1033",
 

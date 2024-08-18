@@ -5,7 +5,7 @@ end
 
 return {
   {
-    "git@code.byted.org:chenjiaqi.cposture/codeverse.vim.git",
+    "git@code.byted.org:lizhe.99/codeverse.nvim.git",
     dependencies = {
       "hrsh7th/nvim-cmp",
     },

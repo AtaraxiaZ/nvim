@@ -56,6 +56,7 @@ local options = {
   sidescrolloff = 8,
   guifont = "monospace:h17", -- the font used in graphical neovim applications
   tags = "./tags,tags;/",
+  textwidth = 80,
 }
 
 vim.opt.shortmess:append("c")

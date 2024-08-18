@@ -34,7 +34,7 @@ return {
       // indent-tabs-mode: nil
       // tab-width: 4
       // verilog-typedef-regexp:"_t$"
-      // verilog-library-directories:("." "../../../bytefpga_ip_common/src/*/")
+      // verilog-library-directories:("." "../*/" "../../../ip/bytefpga_ip_common/src/*/")
       // verilog-auto-inst-column:30
       // End:
      ]],
@@ -108,11 +108,11 @@ return {
     fmta(
       [[
         //******************************************************************************
-        // Copyright <> Microwave System Lab @ Southeast University. All Rights Reserved.
+        // Copyright <> Bytedance Inc. or its affiliates. All Rights Reserved.
         //
         // File: <>
         // Authors:
-        // Zhe Li, 904016301@qq.com
+        // lizhe, lizhe.99@bytedance.com
         //
         // Description:
         // input:
@@ -122,7 +122,7 @@ return {
         //
         // Revision history:
         // Version   Date        Author      Changes
-        // 1.0    <>    Zhe Li      initial version
+        // 1.0    <>     lizhe       initial version
         //******************************************************************************
     ]],
       { p(os.date, "%Y"), i(1), i(2), p(os.date, "%Y-%m-%d") }
@@ -149,6 +149,38 @@ return {
             `define <>
             ]],
       { i(1) }
+    )
+  ),
+  s(
+    {
+      trig = "comment_block",
+      decr = "Write a block comment",
+    },
+    fmta(
+      [[
+                ///////////////////////////////
+                // begin <>               //
+                ///////////////////////////////
+
+                ///////////////////////////////
+                // end   <>               //
+                ///////////////////////////////
+            ]],
+      { i(1), rep(1) }
+    )
+  ),
+  s(
+    {
+      trig = "comment_line",
+      decr = "Write a line comment",
+    },
+    fmta(
+      [[
+                // begin: <>
+
+                // end: <>
+            ]],
+      { i(1), rep(1) }
     )
   ),
 }

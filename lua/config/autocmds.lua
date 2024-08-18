@@ -20,7 +20,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- Disable autoformat for certain filetypes
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "verilog", "systemverilog", "bib" },
+  pattern = { "verilog", "systemverilog", "bib", "python", "scala" },
   callback = function()
     vim.b.autoformat = false
   end,
