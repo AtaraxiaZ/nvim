@@ -1,5 +1,5 @@
 local isEnabled = vim.fn.has("macunix")
-if not isEnabled then
+if isEnabled == 0 then
   return {}
 end
 
