@@ -50,7 +50,16 @@ return {
             `define <>
             `endif
       ]],
-      { i(1), rep(1) }
+      {
+        sn(
+          1,
+          f(function(_, snip)
+            local name = vim.split(snip.snippet.env.TM_FILENAME, ".", true)
+            return name[1]:upper() .. "__SV"
+          end)
+        ),
+        rep(1),
+      }
     )
   ),
   s(
@@ -125,7 +134,18 @@ return {
         // 1.0    <>     lizhe       initial version
         //******************************************************************************
     ]],
-      { p(os.date, "%Y"), i(1), i(2), p(os.date, "%Y-%m-%d") }
+      {
+        p(os.date, "%Y"),
+        sn(
+          2,
+          f(function(_, snip)
+            local name = snip.snippet.env.TM_FILENAME
+            return name
+          end)
+        ),
+        i(1),
+        p(os.date, "%Y-%m-%d"),
+      }
     )
   ),
 
@@ -159,11 +179,11 @@ return {
     fmta(
       [[
                 ///////////////////////////////
-                // begin <>               //
+                // begin <>          //
                 ///////////////////////////////
 
                 ///////////////////////////////
-                // end   <>               //
+                // end   <>          //
                 ///////////////////////////////
             ]],
       { i(1), rep(1) }
@@ -177,7 +197,6 @@ return {
     fmta(
       [[
                 // begin: <>
-
                 // end: <>
             ]],
       { i(1), rep(1) }

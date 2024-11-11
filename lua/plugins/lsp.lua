@@ -17,6 +17,7 @@ return {
         "codelldb",
         "checkmake",
         "hadolint",
+        "rust-analyzer",
       },
     },
   },
