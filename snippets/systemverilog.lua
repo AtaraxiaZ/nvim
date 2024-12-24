@@ -5,16 +5,16 @@ return {
   s(
     { trig = "autotemplate", desr = "Create verilog-mode autotemplate" },
     fmta(
-      [[ 
+      [[
             /* <> auto_template(
-                
+
             );
             */
-            
-            <> 
+
+            <>
             #( /*autoinstparam*/
             )
-            <> 
+            <>
             ( /*autoinst*/
             );
         ]],
@@ -45,7 +45,7 @@ return {
   s(
     { trig = "ifndef", dscr = "The defination of on the top of design file" },
     fmta(
-      [[ 
+      [[
             `ifndef <>
             `define <>
             `endif
@@ -70,7 +70,7 @@ return {
     fmta(
       [[
             `ifdef <>
-                
+
             `else
 
             `endif
@@ -82,7 +82,7 @@ return {
   s(
     { trig = "logic", dscr = "The defination of _d and _q signal" },
     fmta(
-      [[ 
+      [[
       logic [<>:0]          <>_d;
       logic [<>:0]          <>_q;
       ]],
@@ -93,7 +93,7 @@ return {
   s(
     { trig = "logic1", dscr = "The defination of _d and _q signal with data width = 1" },
     fmta(
-      [[ 
+      [[
       logic           <>_d;
       logic           <>_q;
       ]],
@@ -104,7 +104,7 @@ return {
   s(
     { trig = "logictype", dscr = "The type_t defination of _d and _q signal" },
     fmta(
-      [[ 
+      [[
       <>_t        <>_d;
       <>_t        <>_q;
       ]],
@@ -152,7 +152,7 @@ return {
   s(
     { trig = "clk", dscr = "Add clk and reset port" },
     fmta(
-      [[ 
+      [[
             input  logic                clk_i,
             input  logic                rst_i,
             ]],
@@ -202,4 +202,22 @@ return {
       { i(1), rep(1) }
     )
   ),
+  s(
+    {
+      trig = "synthesis_off",
+      decr = "Turn off spyglass lint",
+    },
+    fmta(
+      [[
+                // synthesis translate_off
+
+                // synthesis translate_on
+            ]],
+      {}
+    )
+  ),
+  s({
+    trig = "assert",
+    decr = "assertion for parameter checking",
+  }, fmta([[ assert(<>); else $error("<>"); ]], { i(1), i(2) })),
 }

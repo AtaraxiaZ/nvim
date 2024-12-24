@@ -59,18 +59,6 @@ return {
     },
   },
   {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function()
-      require("copilot").setup({
-        suggestion = {
-          auto_trigger = true,
-        },
-      })
-    end,
-  },
-  {
     "p00f/clangd_extensions.nvim",
     opts = {
       inlay_hints = {

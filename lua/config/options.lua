@@ -75,3 +75,6 @@ vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
 
 vim.opt.complete:remove({ "]" })
+
+-- disable all animation
+vim.g.snacks_animate = false
