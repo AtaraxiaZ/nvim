@@ -1,7 +1,7 @@
 return {
   -- add any tools you want to have installed below
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = {
       ensure_installed = {
         "stylua", -- To read stylua.toml
@@ -11,7 +11,6 @@ return {
         "verible",
         "marksman",
         "black", -- For python formatter
-        "debugpy",
         "clangd",
         "texlab",
         "codelldb",
