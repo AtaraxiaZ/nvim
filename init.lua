@@ -22,15 +22,16 @@ end
 
 -- TSInstall并不会直接将systemrdl的query文件复制到~/.local/share/nvim/lazy/nvim-treesitter/queries/
 -- 需要手动将highlight.scm文件复制过去
-local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-parser_config.systemrdl = {
-  install_info = {
-    url = "~/projects/systemrdl/tree-sitter-systemrdl/", -- local path or git repo
-    files = { "src/parser.c" }, -- note that some parsers also require src/scanner.c or src/scanner.cc
-    -- optional entries:
-    branch = "add-highlights-query", -- default branch in case of git repo if different from master
-    generate_requires_npm = false, -- if stand-alone parser without npm dependencies
-    requires_generate_from_grammar = false, -- if folder contains pre-generated src/parser.c
-  },
-  filetype = "rdl", -- if filetype does not match the parser name
-}
+-- 250919更新：LazyVim用main分支了，原本的语法需要修改
+-- local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+-- parser_config.systemrdl = {
+--   install_info = {
+--     url = "~/projects/systemrdl/tree-sitter-systemrdl/", -- local path or git repo
+--     files = { "src/parser.c" }, -- note that some parsers also require src/scanner.c or src/scanner.cc
+--     -- optional entries:
+--     branch = "add-highlights-query", -- default branch in case of git repo if different from master
+--     generate_requires_npm = false, -- if stand-alone parser without npm dependencies
+--     requires_generate_from_grammar = false, -- if folder contains pre-generated src/parser.c
+--   },
+--   filetype = "rdl", -- if filetype does not match the parser name
+-- }

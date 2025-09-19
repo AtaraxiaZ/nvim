@@ -1,13 +1,13 @@
 return {
-  { "echasnovski/mini.nvim", version = false },
+  { "nvim-mini/mini.nvim", version = false },
   {
-    "echasnovski/mini.align",
+    "nvim-mini/mini.align",
     opts = {
       -- automatic call `require("mini.align").setup(opts)`
     },
   },
   {
-    "echasnovski/mini.surround",
+    "nvim-mini/mini.surround",
     opts = {
       mappings = {
         add = "gsa",
