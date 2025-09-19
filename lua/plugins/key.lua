@@ -3,10 +3,10 @@ return {
     "folke/which-key.nvim",
     optional = true,
     opts = {
-      defaults = {
-        ["<leader>r"] = { name = "+register" },
-        ["<leader>gd"] = { name = "+Diffview" },
-        ["<leader>gh"] = { name = "+Gitsign" },
+      spec = {
+        { "<leader>gd", group = "+Diffview" },
+        { "<leader>gh", group = "+Gitsign" },
+        { "<leader>r", group = "+register" },
       },
     },
   },
