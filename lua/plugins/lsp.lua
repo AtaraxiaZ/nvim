@@ -47,6 +47,9 @@ return {
             { "<Leader>K", "<cmd>VimtexDocPackage<cr>", desc = "Vimtex Docs", silent = true },
           },
         },
+        verible = {
+          cmd = { "verible-verilog-ls", "--rules_config_search", "--indentation_spaces=4" },
+        },
       },
       setup = {
         clangd = function(_, opts)
