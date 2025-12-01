@@ -33,6 +33,8 @@ return {
       // Local Variables:
       // indent-tabs-mode: nil
       // tab-width: 4
+      // verilog-auto-tieoff-declaration: "assign"
+      // verilog-auto-reset-widths: unbased
       // verilog-typedef-regexp:"_t$"
       // verilog-library-directories:("." "../*/" "../../../ip/bytefpga_ip_common/src/*/")
       // verilog-auto-inst-column:30
