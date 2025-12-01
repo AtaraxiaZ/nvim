@@ -55,7 +55,7 @@ return {
           1,
           f(function(_, snip)
             local name = vim.split(snip.snippet.env.TM_FILENAME, ".", true)
-            return name[1]:upper() .. "__SV"
+            return name[1]:upper() .. "__" .. name[2]:upper()
           end)
         ),
         rep(1),
