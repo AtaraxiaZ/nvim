@@ -37,4 +37,12 @@ keymap("n", "<leader>rt", "<cmd>%s/\\s*;$/;/g<CR> | <cmd>%s/\\s*,$/,/g<CR>", { d
 -- run cog and verilog mode
 keymap("n", "<F5>", "! emacs -l ~/opt/verilog-mode.el --batch % -f verilog-batch-auto <CR>")
 
+-- reverse input and output
+keymap(
+  "x",
+  "<leader>re",
+  ":s/output/xutput/ge | '<,'>s/input /output/ge | '<,'>s/xutput/input /ge | '<,'>s/_i,/_x,/ge | '<,'>s/_o,/_i,/ge | '<,'>s/_x,/_o,/ge<CR>",
+  { desc = "reverse input and output" }
+)
+
 opt.commentstring = "// %s"
