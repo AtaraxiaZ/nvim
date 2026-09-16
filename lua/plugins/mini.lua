@@ -1,5 +1,4 @@
 return {
-  { "nvim-mini/mini.nvim", version = false },
   {
     "nvim-mini/mini.align",
     opts = {
